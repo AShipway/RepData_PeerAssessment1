@@ -64,6 +64,7 @@ hist(count_table$Date, breaks = 53, xlab = "Date", main = "Histogram of Steps pe
 
 ![](PA1_template_files/figure-html/total_steps-1.png)<!-- -->
 
+
 ### Mean steps per day
 
 ```r
@@ -201,3 +202,4 @@ qplot(Interval, Average, data = finalweekdays_table, geom = "line", facets = .~I
 
 ![](PA1_template_files/figure-html/wkday_vs_wkend-1.png)<!-- -->
 
+End of Document
