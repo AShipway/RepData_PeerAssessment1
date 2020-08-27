@@ -59,15 +59,7 @@ steps_sum<-tapply(naomit_data$steps, naomit_data$date, sum)
 count_table<-data.frame(Date = names(steps_sum), Steps = steps_sum)
 count_table$Date<-as.Date(count_table$Date)
 
-ggplot(count_table) + geom_bar(aes(x=count_table$Date, y=count_table$Steps), stat="identity")+ggtitle("Average Steps per Day (Oct - Nov 2012)")+xlab("Date")+ylab("Average Steps Taken")
-```
-
-```
-## Warning: Use of `count_table$Date` is discouraged. Use `Date` instead.
-```
-
-```
-## Warning: Use of `count_table$Steps` is discouraged. Use `Steps` instead.
+hist(count_table$Steps, xlab = "Total Steps Taken per Day", main = "Histogram of Steps Taken per Day")
 ```
 
 ![](PA1_template_files/figure-html/total_steps-1.png)<!-- -->
@@ -160,15 +152,7 @@ for(i in 1:17568){
 steps_sum2<-tapply(rawdata_fixed$steps, rawdata_fixed$date, sum)
 count_table2<-data.frame(Date = names(steps_sum2), Steps = steps_sum2)
 count_table2$Date<-as.Date(count_table2$Date)
-ggplot(count_table2) + geom_bar(aes(x=count_table2$Date, y=count_table2$Steps), stat="identity")+ggtitle("Average Steps per Day with Imputed Data")+xlab("Date")+ylab("Average Steps Taken")
-```
-
-```
-## Warning: Use of `count_table2$Date` is discouraged. Use `Date` instead.
-```
-
-```
-## Warning: Use of `count_table2$Steps` is discouraged. Use `Steps` instead.
+hist(count_table2$Steps, xlab = "Total Steps Taken per Day", main = "Histogram of Steps Taken per Day (with Imputed Data)")
 ```
 
 ![](PA1_template_files/figure-html/total_steps2-1.png)<!-- -->
